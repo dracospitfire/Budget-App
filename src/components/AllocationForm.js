@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const AllocationForm = (props) => {
-    const { dispatch, remaining } = useContext(AppContext);
+    const { dispatch, remaining, Currency } = useContext(AppContext);
     
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
@@ -16,13 +16,20 @@ const AllocationForm = (props) => {
             setCost("");
             return;
         } else {
-            if (cost > remaining) {
-                alert("The value cannot exceed remaining funds $" + remaining);
+            if (cost <= 0) {
+                alert("You need to enter a value greater than ZERO.");
                 setCost("");
                 return;
+
+            } else {
+                if (cost > remaining) {
+                    alert("The value cannot exceed remaining funds $" + remaining);
+                    setCost("");
+                    return;
+                }
             }
         }
-
+        
         const expense = {
             name: name,
             cost: parseInt(cost),
@@ -65,16 +72,16 @@ const AllocationForm = (props) => {
                         <option defaultValue value="Add" name="Add">Add</option>
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
-
+                        <span style={{marginLeft: '2rem' , size: 10}}>{Currency}
                     <input
                         required='required'
                         type='number'
                         id='cost'
                         value={cost}
-                        style={{ marginLeft: '2rem' , size: 10}}
+                        min="1"
                         onChange={(event) => setCost(event.target.value)}>
                         </input>
-
+                        </span>
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>
                         Save
                     </button>
