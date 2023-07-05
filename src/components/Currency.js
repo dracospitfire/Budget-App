@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
+import './Style.css';
 
 const Currency = () => {
   const {dispatch } = useContext(AppContext);
@@ -11,17 +12,23 @@ const Currency = () => {
     }
     
   return (
-        <div className='alert alert-secondary'> Currency {
-      <select name="Currency" id="Currency" onChange={event=>changeCurrency(event.target.value)}>
-        <option value="$">US($)</option>
-        <option value="£">UK(£)</option>
-        <option value="₹">India(₹)</option>
-        <option value="€">Europe(€)</option>
-        <option value="CAD">Canada(CAD)</option>
-      </select>	
-      }	
+    <div className="alert alert-secondary"
+      style={{marginLeft: "1rem", backgroundColor: "lightgreen", color: "white"}}>
+      <label
+        style={{marginLeft: "1rem", backgroundColor: "lightgreen", color: "white"}}>
+        Currency (
+        <select name="hover_color" id="currency"
+          onChange={(event) => changeCurrency(event.target.value)}
+          style={{backgroundColor: "lightgreen", color: "white"}}>
+          <option style={{ color: "black" }} value="$">$ Dollar</option>
+          <option style={{ color: "black" }} value="£">£ Pound</option>
+          <option style={{ color: "black" }} value="€">€ Euro</option>
+          <option style={{ color: "black" }} value="₹">₹ Rupee</option>
+        </select>
+        )
+      </label>
     </div>
-    );
+	);
 };
 
 export default Currency;
