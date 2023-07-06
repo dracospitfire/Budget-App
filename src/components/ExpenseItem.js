@@ -2,7 +2,7 @@
 import React, { useContext } from 'react';
 import { TiDelete } from 'react-icons/ti';
 import { AppContext } from '../context/AppContext';
-import "./Style.css" ;
+import "../App.css" ;
 import plus from "../imgs/plus.png";
 import minus from "../imgs/minus.png";
 

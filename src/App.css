@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.transparent-button {
+  background-color: transparent;
+  border: none;
+}
+
+.custom-select:hover {    
+  background-color: white;
+}
+
+.hover_color:hover { 
+  background-color: red; border:1px solid red 
+}
