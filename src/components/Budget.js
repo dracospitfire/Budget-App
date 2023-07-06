@@ -33,7 +33,8 @@ const Budget = (prop) => {
                         type='number'
                         id='budget'
                         value={budget}
-                        onChange={event=>changeBudget(event.target.value)}>
+                        onChange={event=>changeBudget(event.target.value)}
+                        style={{ width: '100px' }}>
                 </input>
             </span>
         </div>
