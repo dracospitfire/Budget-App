@@ -13,9 +13,9 @@ const Currency = () => {
     
   return (
     <div className="alert alert-secondary"
-      style={{marginLeft: "1rem", backgroundColor: "lightgreen", color: "white"}}>
+      style={{backgroundColor: "lightgreen", color: "white"}}>
       <label
-        style={{marginLeft: "1rem", backgroundColor: "lightgreen", color: "white"}}>
+        style={{marginLeft: "1rem"}}>
         Currency (
         <select name="hover_color" id="currency"
           onChange={(event) => changeCurrency(event.target.value)}
