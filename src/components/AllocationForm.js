@@ -50,46 +50,53 @@ const AllocationForm = (props) => {
     return (
         <div>
             <div className='row'>
-            
-            <div className="input-group mb-3" style={{ marginLeft: '2rem' }}>
-                    <div className="input-group-prepend">
-                <label className="input-group-text" htmlFor="inputGroupSelect01">Department</label>
-                  </div>
-                  <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
-                        <option defaultValue>Choose...</option>
-                        <option value="Marketing" name="marketing"> Marketing</option>
-                <option value="Sales" name="sales">Sales</option>
-                <option value="Finance" name="finance">Finance</option>
-                <option value="HR" name="hr">HR</option>
-                <option value="IT" name="it">IT</option>
-                <option value="Admin" name="admin">Admin</option>
-                  </select>
+                <div className="input-group mb-3">
 
-                    <div className="input-group-prepend" style={{ marginLeft: '2rem' }}>
-                <label className="input-group-text" htmlFor="inputGroupSelect02">Allocation</label>
-                  </div>
-                  <select className="custom-select" id="inputGroupSelect02" onChange={(event) => setAction(event.target.value)}>
-                        <option defaultValue value="Add" name="Add">Add</option>
-                <option value="Reduce" name="Reduce">Reduce</option>
-                  </select>
-                        <span style={{marginLeft: '2rem' , size: 10}}>{Currency}
-                    <input
-                        required='required'
-                        type='number'
-                        id='cost'
-                        value={cost}
-                        min="1"
-                        onChange={(event) => setCost(event.target.value)}>
+                    <div className="input-group-prepend" style={{ marginLeft: '2rem', marginRight: '.1rem' }}>
+                        <label className="input-group-text" htmlFor="inputGroupSelect01">Department</label>
+                    </div>
+                    <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
+                        <option defaultValue>Choose...</option>
+                            <option value="Marketing" name="marketing"> Marketing</option>
+                            <option value="Sales" name="sales">Sales</option>
+                            <option value="Finance" name="finance">Finance</option>
+                            <option value="HR" name="hr">HR</option>
+                            <option value="IT" name="it">IT</option>
+                            <option value="Admin" name="admin">Admin</option>
+                    </select>
+
+                    <div className="input-group-prepend" style={{ marginLeft: '2rem', marginRight: '.1rem' }}>
+                        <label className="input-group-text" htmlFor="inputGroupSelect02">Allocation</label>
+                    </div>
+                    <select className="custom-select" id="inputGroupSelect02" onChange={(event) => setAction(event.target.value)}>
+                        <option defaultValue>Choose...</option>
+                            <option defaultValue value="Add" name="Add">Add</option>
+                            <option value="Reduce" name="Reduce">Reduce</option>
+                    </select>
+                    <div className="input-group-prepend" style={{ marginLeft: '2em' }}> 
+                    </div>
+                    <div className="input-group-prepend" style={{ marginLeft: '2em', marginRight: '.1rem' }}> 
+                        <label className="input-group-text" htmlFor="inputGroupSelect02">Amount {Currency}</label>
+                    </div>
+                    <span style={{ marginRight: '.1rem'}}>
+                        <input
+                            required='required'
+                            type='number'
+                            id='cost'
+                            value={cost}
+                            min="1"
+                            onChange={(event) => setCost(event.target.value)}
+                            style={{ width: '120px' }}>
                         </input>
-                        </span>
-                    <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>
+                    </span>
+                    <button className="btn btn-primary rounded" onClick={submitEvent}>
                         Save
                     </button>
+                    
                 </div>
-                </div>
-                
+            </div>
         </div>
-    );
+  );
 };
 
 export default AllocationForm;
